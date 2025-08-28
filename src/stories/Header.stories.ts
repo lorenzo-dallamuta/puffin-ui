@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 
 import { Header } from '../components/Header';
+import { USER_TYPE } from '../types/enums';
 
 const meta = {
   title: 'Example/Header',
@@ -27,6 +28,7 @@ export const LoggedIn: Story = {
   args: {
     user: {
       name: 'Jane Doe',
+      type: USER_TYPE.EDITOR
     },
   },
 };

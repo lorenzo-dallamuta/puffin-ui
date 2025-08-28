@@ -1,9 +1,6 @@
 import { Button } from '../atoms/Button';
+import { USER_TYPE } from '../types/enums';
 import './header.css';
-
-type User = {
-  name: string;
-};
 
 export interface HeaderProps {
   user?: User;

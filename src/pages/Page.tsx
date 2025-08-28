@@ -1,11 +1,8 @@
 import React from 'react';
 
 import { Header } from '../components/Header';
+import { USER_TYPE } from '../types/enums';
 import './page.css';
-
-type User = {
-  name: string;
-};
 
 export const Page: React.FC = () => {
   const [user, setUser] = React.useState<User>();
@@ -14,9 +11,13 @@ export const Page: React.FC = () => {
     <article>
       <Header
         user={user}
-        onLogin={() => setUser({ name: 'Jane Doe' })}
+        onLogin={() => {
+          console.log(user)
+          setUser({ name: 'Jane Doe', type: USER_TYPE.EDITOR })
+          console.log(user)
+        }}
         onLogout={() => setUser(undefined)}
-        onCreateAccount={() => setUser({ name: 'Jane Doe' })}
+        onCreateAccount={() => setUser({ name: 'Jane Doe', type: USER_TYPE.EDITOR })}
       />
 
       <section className="storybook-page">
