@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Header } from '../components/Header';
 import { USER_TYPE } from '../types/enums';
-import './page.css';
+import { StyledPageContainer, StyledPageTitle, StyledTip, StyledTipWrapper } from './page.styled';
 
 export const Page: React.FC = () => {
   const [user, setUser] = React.useState<User>();
@@ -20,8 +20,8 @@ export const Page: React.FC = () => {
         onCreateAccount={() => setUser({ name: 'Jane Doe', type: USER_TYPE.EDITOR })}
       />
 
-      <section className="storybook-page">
-        <h2>Pages in Storybook</h2>
+      <StyledPageContainer>
+        <StyledPageTitle>Pages in Storybook</StyledPageTitle>
         <p>
           We recommend building UIs with a{' '}
           <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
@@ -55,8 +55,8 @@ export const Page: React.FC = () => {
           </a>
           .
         </p>
-        <div className="tip-wrapper">
-          <span className="tip">Tip</span> Adjust the width of the canvas with the{' '}
+        <StyledTipWrapper>
+          <StyledTip>Tip</StyledTip> Adjust the width of the canvas with the{' '}
           <svg width="10" height="10" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fillRule="evenodd">
               <path
@@ -67,8 +67,8 @@ export const Page: React.FC = () => {
             </g>
           </svg>
           Viewports addon in the toolbar
-        </div>
-      </section>
+        </StyledTipWrapper>
+      </StyledPageContainer>
     </article>
   );
 };
