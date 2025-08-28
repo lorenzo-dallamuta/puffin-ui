@@ -35,7 +35,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
         {user ? (
           <>
             <span className="welcome">
-              Welcome, <b>{user.name}</b>!
+              Welcome, <b>{user.type === USER_TYPE.END_USER ? user.name : `[[ ${user.name} ]]`}</b>!
             </span>
             <Button size="small" onClick={onLogout} label="Log out" />
           </>
