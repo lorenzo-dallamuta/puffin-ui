@@ -4,7 +4,7 @@ A modern React & TypeScript component library built to demonstrate design system
 Chromatic is used for visual regression testing and to publish a live Storybook. 
 Run with: `npm run chromatic`
 
-If you Chromatic via continuous integration, set the CHROMATIC_PROJECT_TOKEN environment variable in your CI environment and remove the `--project-token` flag from your package.json script.
+Chromatic will be run via continuous integration, this requires to set the CHROMATIC_PROJECT_TOKEN environment variable in your CI environment.
 
 # License
 This repository is licensed under the Prosperity Public License 3.0.0. Commercial use is not permitted without a paid license. For full terms, see the LICENSE file.
