@@ -25,4 +25,9 @@ export const Default: Story = {
   args: {
     cards: cardsMock()
   },
+  parameters: {
+    chromatic: { 
+      viewports: [320, 768, 1024, 1440]
+    },
+  },
 };
