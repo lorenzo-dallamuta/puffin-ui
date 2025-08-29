@@ -6,7 +6,7 @@ export const StyledDropdownContent = styled(DropdownMenu.Content)`
   border-radius: 8px;
   margin-top:4px;
   padding: 4px 20px 8px 12px;
-  transform: translateX(12px);
+  transform: translateX(8px);
 `;
 
 export const StyledDropdownItem = styled(DropdownMenu.Item)`
