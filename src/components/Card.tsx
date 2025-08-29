@@ -1,15 +1,22 @@
 import { Box, Text } from '@radix-ui/themes';
 import { StyledCard } from './card.styled';
+import type { ComponentProps } from 'react';
 
-export const Card = () => (
-  <Box maxWidth="350px">
-	<StyledCard asChild>
+interface CardProps extends ComponentProps<typeof StyledCard> {
+  userName: string,
+  summary: string,
+  maxWidth?: string
+}
+
+export const Card = ({ maxWidth="350px", summary, userName, ...props }: CardProps) => (
+  <Box maxWidth={maxWidth}>
+	<StyledCard asChild {...props}>
 		<a href="#">
 			<Text as="div" size="2" weight="bold">
-				name and surname
+				{userName}
 			</Text>
 			<Text as="div" color="gray" size="2">
-				brief intro
+				{summary}
 			</Text>
 		</a>
 	</StyledCard>
