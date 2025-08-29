@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card } from '@radix-ui/themes';
+import { Card, Text } from '@radix-ui/themes';
 
 export const StyledCard = styled(Card)`
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -17,3 +17,11 @@ export const StyledAvatar = styled.img`
   aspect-ratio: 1 / 1;
   box-sizing: border-box;
 `;
+
+export const StyledSummary = styled(Text)`
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
