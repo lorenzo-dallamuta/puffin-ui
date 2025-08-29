@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { Button } from '@radix-ui/themes';
 
 interface StyledButtonProps {
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
 }
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styled(Button)<StyledButtonProps>`
   display: inline-block;
   cursor: pointer;
   border: 0;
