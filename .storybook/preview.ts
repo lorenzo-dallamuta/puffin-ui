@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
+import "@radix-ui/themes/styles.css";
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../src/main.styles';
 
