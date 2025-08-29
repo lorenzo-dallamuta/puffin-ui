@@ -33,3 +33,27 @@ export const Default: Story = {
     summary: faker.person.bio()
   },
 };
+
+export const Small: Story = {
+  args: {
+    userName: faker.person.fullName(),
+    summary: faker.person.bio(),
+    maxWidth: "270px"
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    userName: faker.person.fullName(),
+    summary: faker.person.bio(),
+    maxWidth: "320px"
+  },
+};
+
+export const Large: Story = {
+  args: {
+    userName: faker.person.fullName(),
+    summary: faker.person.bio(),
+    maxWidth: "420px"
+  },
+};

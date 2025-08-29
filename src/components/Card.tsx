@@ -1,6 +1,7 @@
 import { Box, Text } from '@radix-ui/themes';
-import { StyledCard } from './card.styled';
+import { faker } from '@faker-js/faker';
 import type { ComponentProps } from 'react';
+import { StyledAvatar, StyledCard } from './card.styled';
 
 interface CardProps extends ComponentProps<typeof StyledCard> {
   userName: string,
@@ -12,6 +13,7 @@ export const Card = ({ maxWidth="350px", summary, userName, ...props }: CardProp
   <Box maxWidth={maxWidth}>
 	<StyledCard asChild {...props}>
 		<a href="#">
+			<StyledAvatar src={faker.image.avatar()}/>
 			<Text as="div" size="2" weight="bold">
 				{userName}
 			</Text>
