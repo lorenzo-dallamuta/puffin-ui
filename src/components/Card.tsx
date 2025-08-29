@@ -13,11 +13,11 @@ export const Card = ({ maxWidth, summary, userName, avatar, ...props }: CardProp
   <Box maxWidth={maxWidth}>
 	<StyledCard asChild {...props}>
 		<a href="#">
-			<StyledAvatar src={avatar}/>
-			<Text as="div" size="2" weight="bold">
+			<StyledAvatar src={avatar} data-chromatic="ignore"/>
+			<Text as="div" size="2" weight="bold" data-chromatic="ignore">
 				{userName}
 			</Text>
-			<Text as="div" color="gray" size="2">
+			<Text as="div" color="gray" size="2" data-chromatic="ignore">
 				{summary}
 			</Text>
 		</a>
