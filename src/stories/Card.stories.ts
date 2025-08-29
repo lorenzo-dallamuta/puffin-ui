@@ -17,6 +17,7 @@ const meta = {
   argTypes: {
     summary: { control: 'text', type: 'string' },
     userName: { control: 'text', type: 'string' },
+    avatar: { control: 'text', type: 'string' },
     maxWidth: { control: 'text', type: 'string',  },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -30,7 +31,8 @@ export const Default: Story = {
   args: {
     userName: faker.person.fullName(),
     // summary: 'Pocket-sized joy curator with perpetual hamster hype. (AI said so.)'
-    summary: faker.person.bio()
+    summary: faker.person.bio(),
+    avatar: faker.image.avatar(),
   },
 };
 
@@ -38,6 +40,7 @@ export const Small: Story = {
   args: {
     userName: faker.person.fullName(),
     summary: faker.person.bio(),
+    avatar: faker.image.avatar(),
     maxWidth: "270px"
   },
 };
@@ -46,6 +49,7 @@ export const Medium: Story = {
   args: {
     userName: faker.person.fullName(),
     summary: faker.person.bio(),
+    avatar: faker.image.avatar(),
     maxWidth: "320px"
   },
 };
@@ -54,6 +58,7 @@ export const Large: Story = {
   args: {
     userName: faker.person.fullName(),
     summary: faker.person.bio(),
+    avatar: faker.image.avatar(),
     maxWidth: "420px"
   },
 };
