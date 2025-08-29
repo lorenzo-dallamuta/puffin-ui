@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import { faker } from '@faker-js/faker';
 import { UserProfileDropdown } from '../components/UserProfileDropdown';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -22,12 +23,16 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Closed: Story = {
   args: {
-    open: false
+    open: false,
+    avatar: faker.image.avatar(),
+    userFullName: faker.person.fullName()
   }
 };
 
 export const Open: Story = {
   args: {
-    open: true
+    open: true,
+    avatar: faker.image.avatar(),
+    userFullName: faker.person.fullName()
   }
 };

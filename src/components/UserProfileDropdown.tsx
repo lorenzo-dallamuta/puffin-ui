@@ -1,17 +1,32 @@
-import { DropdownMenu, Separator } from "radix-ui";
+import { Avatar, DropdownMenu, Separator } from "radix-ui";
 import { Button } from "@radix-ui/themes";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { StyledDropdownContent, StyledDropdownItem } from "./UserProfileDropdown.styled";
+import { StyledAvatarImage, StyledDropdownContent, StyledDropdownItem } from "./UserProfileDropdown.styled";
 import type { ComponentProps } from "react";
+import useInitials from "../hooks/useInitials";
 
-type UserProfileDropdownProps = ComponentProps<typeof DropdownMenu.Root> & {}
+type UserProfileDropdownProps = ComponentProps<typeof DropdownMenu.Root> & {
+  avatar: string,
+  userFullName: string
+}
 
-export const UserProfileDropdown = (props: UserProfileDropdownProps) => {
+export const UserProfileDropdown = ({ avatar, userFullName, ...props }: UserProfileDropdownProps) => {
+  const initials = useInitials(userFullName);
+
   return (
     <DropdownMenu.Root {...props}>
       <DropdownMenu.Trigger asChild>
         <Button>
-          <HamburgerMenuIcon />
+          <Avatar.Root>
+            <StyledAvatarImage
+              src={avatar}
+              alt={initials}
+              data-chromatic="ignore"
+            />
+            <Avatar.Fallback delayMs={600}>
+              <HamburgerMenuIcon />
+            </Avatar.Fallback>
+          </Avatar.Root>
         </Button>
       </DropdownMenu.Trigger>
       <StyledDropdownContent align="end">
