@@ -2,10 +2,13 @@ import { DropdownMenu, Separator } from "radix-ui";
 import { Button } from "@radix-ui/themes";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { StyledDropdownContent, StyledDropdownItem } from "./UserProfileDropdown.styled";
+import type { ComponentProps } from "react";
 
-export const UserProfileDropdown = () => {
+type UserProfileDropdownProps = ComponentProps<typeof DropdownMenu.Root> & {}
+
+export const UserProfileDropdown = (props: UserProfileDropdownProps) => {
   return (
-    <DropdownMenu.Root>
+    <DropdownMenu.Root {...props}>
       <DropdownMenu.Trigger asChild>
         <Button>
           <HamburgerMenuIcon />
