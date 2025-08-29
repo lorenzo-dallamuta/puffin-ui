@@ -1,4 +1,4 @@
-import './button.css';
+import { StyledButton } from './button.styled';
 
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
@@ -21,15 +21,15 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
+    <StyledButton
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      variant={primary ? 'primary' : 'secondary'}
       style={{ backgroundColor }}
+      size={size}
       {...props}
     >
       {label}
-    </button>
+    </StyledButton>
   );
 };

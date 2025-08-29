@@ -1,4 +1,12 @@
 import type { Preview } from '@storybook/react-vite'
+import { withThemeFromJSXProvider } from '@storybook/addon-themes';
+import "@radix-ui/themes/styles.css";
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from '../src/main.styles';
+
+const defaultTheme = {
+  color: "#272727ff"
+}
 
 const preview: Preview = {
   parameters: {
@@ -16,6 +24,16 @@ const preview: Preview = {
       test: 'todo'
     }
   },
+
+  decorators: [withThemeFromJSXProvider({
+    themes: {
+      light: defaultTheme,
+      dark: defaultTheme,
+    },
+    defaultTheme: 'light',
+    Provider: ThemeProvider,
+    GlobalStyles,
+    })]
 };
 
 export default preview;

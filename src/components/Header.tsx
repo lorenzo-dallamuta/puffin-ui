@@ -1,6 +1,6 @@
 import { Button } from '../atoms/Button';
 import { USER_TYPE } from '../types/enums';
-import './header.css';
+import { StyledLogo, StyledSplash, StyledTitle, StyledWelcome } from './header.styled';
 
 export interface HeaderProps {
   user?: User;
@@ -11,9 +11,9 @@ export interface HeaderProps {
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
   <header>
-    <div className="storybook-header">
+    <StyledSplash>
       <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <StyledLogo width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
             <path
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
@@ -28,15 +28,15 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
               fill="#91BAF8"
             />
           </g>
-        </svg>
-        <h1>Acme</h1>
+        </StyledLogo>
+        <StyledTitle>Acme</StyledTitle>
       </div>
       <div>
         {user ? (
           <>
-            <span className="welcome">
+            <StyledWelcome>
               Welcome, <b>{user.type === USER_TYPE.END_USER ? user.name : `[[ ${user.name} ]]`}</b>!
-            </span>
+            </StyledWelcome>
             <Button size="small" onClick={onLogout} label="Log out" />
           </>
         ) : (
@@ -46,6 +46,6 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
           </>
         )}
       </div>
-    </div>
+    </StyledSplash>
   </header>
 );
