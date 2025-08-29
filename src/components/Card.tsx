@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 import type { ComponentProps } from 'react';
 import { StyledAvatar, StyledCard } from './card.styled';
 
-interface CardProps extends ComponentProps<typeof StyledCard> {
+export interface CardProps extends ComponentProps<typeof StyledCard> {
   userName: string,
   summary: string,
   maxWidth?: string
