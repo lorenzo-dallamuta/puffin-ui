@@ -1,6 +1,6 @@
 import { Box, Text } from '@radix-ui/themes';
 import type { ComponentProps } from 'react';
-import { StyledAvatar, StyledCard } from './card.styled';
+import { StyledAvatar, StyledCard, StyledSummary } from './card.styled';
 
 export interface CardProps extends ComponentProps<typeof StyledCard> {
   userName: string,
@@ -17,9 +17,9 @@ export const Card = ({ maxWidth, summary, userName, avatar, ...props }: CardProp
 			<Text as="div" size="2" weight="bold" data-chromatic="ignore">
 				{userName}
 			</Text>
-			<Text as="div" color="gray" size="2" data-chromatic="ignore">
+			<StyledSummary as="div" color="gray" size="2" data-chromatic="ignore">
 				{summary}
-			</Text>
+			</StyledSummary>
 		</a>
 	</StyledCard>
 </Box>
