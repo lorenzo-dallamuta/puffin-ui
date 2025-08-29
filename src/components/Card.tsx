@@ -1,4 +1,4 @@
-import { Box, Text } from '@radix-ui/themes';
+import { Box, Separator, Text } from '@radix-ui/themes';
 import type { ComponentProps } from 'react';
 import { StyledAvatar, StyledCard, StyledSummary } from './card.styled';
 
@@ -14,6 +14,7 @@ export const Card = ({ maxWidth, summary, userName, avatar, ...props }: CardProp
 	<StyledCard asChild {...props}>
 		<a href="#">
 			<StyledAvatar src={avatar} data-chromatic="ignore"/>
+			<Separator my="12" size="1" />
 			<Text as="div" size="2" weight="bold" data-chromatic="ignore">
 				{userName}
 			</Text>
