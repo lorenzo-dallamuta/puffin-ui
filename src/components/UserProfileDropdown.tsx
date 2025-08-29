@@ -1,0 +1,29 @@
+import { DropdownMenu, Separator } from "radix-ui";
+import { Button } from "@radix-ui/themes";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { StyledDropdownContent, StyledDropdownItem } from "./UserProfileDropdown.styled";
+
+export const UserProfileDropdown = () => {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger asChild>
+        <Button>
+          <HamburgerMenuIcon />
+        </Button>
+      </DropdownMenu.Trigger>
+      <StyledDropdownContent align="end">
+        <DropdownMenu.Group>
+          <StyledDropdownItem>Profile</StyledDropdownItem>
+          <StyledDropdownItem>Settings</StyledDropdownItem>
+          <StyledDropdownItem>About</StyledDropdownItem>
+        </DropdownMenu.Group>
+        <Separator.Root
+          decorative
+          orientation="horizontal"
+          style={{ margin: "8px 0" }}
+        />
+        <StyledDropdownItem color="red">Log out</StyledDropdownItem>
+      </StyledDropdownContent>
+    </DropdownMenu.Root>
+  );
+};
