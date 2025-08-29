@@ -1,16 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.header`
+export const StyledSplash = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 15px 20px;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-  button + button {
-    margin-left: 10px;
-  }
 `;
 
 export const StyledLogo = styled.svg`
@@ -27,7 +23,6 @@ export const StyledTitle = styled.h1`
   font-size: 20px;
   line-height: 1;
 `;
-
 
 export const StyledWelcome = styled.span`
   margin-right: 10px;
