@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 
 import { Grid } from '../../atoms/layout/Grid';
+import { layoutArgTypes } from './sharedLayoutControls';
 
 const meta = {
   title: 'Layout/Grid',
@@ -24,6 +25,7 @@ const meta = {
     gap: { type: 'string', description: 'suggested values are: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9', table: { defaultValue: { summary: '0' } } },
     gapX: { type: 'string', description: 'suggested values are: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9', table: { defaultValue: { summary: '0' } } },
     gapY: { type: 'string', description: 'suggested values are: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9', table: { defaultValue: { summary: '0' } } },
+    ...layoutArgTypes
   },
   render: ({ children, ...props }) => (<div style={{backgroundColor: '#ffffc0'}}><Grid {...props}>{children ?? 'Grid'}</Grid></div>),
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
