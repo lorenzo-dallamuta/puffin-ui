@@ -6,6 +6,8 @@ Run with: `npm run chromatic`
 
 Chromatic will be run via continuous integration, this requires to set the CHROMATIC_PROJECT_TOKEN environment variable in your CI environment.
 
+At this point, I decided against trying to implement Radix UI's responsive decorators in the stories of this project, since the main workflow relies on static screenshots through Chromatic. In the future, MAYBE a solution that will delegate responsive variants to Chromatic viewport rendering functionalities may be implemented.
+
 # License
 This repository is licensed under the Prosperity Public License 3.0.0. Commercial use is not permitted without a paid license. For full terms, see the LICENSE file.
 
